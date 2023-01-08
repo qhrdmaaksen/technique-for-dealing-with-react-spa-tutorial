@@ -16,7 +16,8 @@ const Profile = () => {
   const params = useParams();
   /** data 객체에 프로필 정보들을 key-value 형태로 담아두었음
    * Profile 컴포넌트에서는 username URL 파라미터를 통해 프로필을 조회한 뒤에 프로필이 존재하지 않는다면
-   * 존재하지않는 사용자라고 문구를 보여주고 존재한다면 프로필 정보를 보여주도록 함*/
+   * 존재하지않는 사용자라고 문구를 보여주고 존재한다면 프로필 정보를 보여주도록 함
+   * 여기서 username 은 App.js 에 Route path 의 :username 임*/
   const profile = data[params.username];
 
   return (
