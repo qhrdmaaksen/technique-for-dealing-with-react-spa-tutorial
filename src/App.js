@@ -7,6 +7,9 @@ import Profile from "./pages/Profile";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import Layout from "./Layout";
+import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import MyPage from "./pages/MyPage";
 
 function App() {
   return (
@@ -21,6 +24,11 @@ function App() {
       <Route path="/articles" element={<Articles />}>
         <Route path=":id" element={<Article />} />
       </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/mypage" element={<MyPage />} />
+      {/** 여기서 path 에 * 는 wildcard 문자이며 아무 텍스트나 매칭한다는 뜻임 위의 경로들을 거쳐서 규칙을 확인하고
+       일치하는 라우트가 없다면 해당 not found 라우트가 화면에 나타나게됨*/}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
